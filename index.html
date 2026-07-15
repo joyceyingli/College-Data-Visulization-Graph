@@ -1,0 +1,156 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Lab 7</title>
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+
+
+
+        
+
+    </head>
+    <body>
+ 
+        <div id="pageOne" class="container">
+            <h1>Colleges in US by Region</h1>
+        
+            <svg id="bubbleChart" width="800" height="500" class="centered"></svg>
+        
+            <p class="caption">Select a Region</p>
+          </div>
+        <div id="pageTwo">
+            
+            <h1 style="right:30%;">Colleges in US by Region</h1>
+            <h2 id="regionTitle"></h2>
+            <div id="menus1"style="flex-direction:column; display:inline-block; height: 50px; width: 50%"> 
+                <div class="dropdown-container">
+                    <b>X Axis:</b>
+                    <select id="XAxis1Menu">
+                        <option value="Admission Rate">Admission Rate</option>
+                        <option value="ACT Median">ACT Median</option>
+                        <option value="SAT Average">SAT Average</option>
+                        <option value="Undergrad Population">Undergrad Population</option>
+                        <option value="% White">%White</option>
+                        <option value="% Black">% Black</option>
+                        <option value="% Hispanic">% Hispanic</option>
+                        <option value="% Asian">% Asian</option>
+                        <option value="% American Indian">% American Indian</option>
+                        <option value="% Pacific Islander">% Pacific Islander</option>
+                        <option value="Average Cost">Average Cost</option>
+                        <option value="Expenditure Per Student">Expenditure Per Student</option>
+                        <option value="Completion Rate 150% time">Completion Rate 150% time</option>
+                        <option value="Retention Rate">Retention Rate</option>
+                        <option value="Median Debt on Graduation">Median Debt on Graduation</option>
+                        <option value="Median Earnings 8 years After Entry">Median Earnings 8 years After Entry</option>
+                    </select>  
+                </div>   
+                <div class="dropdown-container">
+                    <b>Y Axis:</b>
+                    <select id="YAxis1Menu">
+                        <option value="Admission Rate">Admission Rate</option>
+                        <option value="ACT Median">ACT Median</option>
+                        <option value="SAT Average">SAT Average</option>
+                        <option value="Undergrad Population">Undergrad Population</option>
+                        <option value="% White">%White</option>
+                        <option value="% Black">% Black</option>
+                        <option value="% Hispanic">% Hispanic</option>
+                        <option value="% Asian">% Asian</option>
+                        <option value="% American Indian">% American Indian</option>
+                        <option value="% Pacific Islander">% Pacific Islander</option>
+                        <option value="Average Cost">Average Cost</option>
+                        <option value="Expenditure Per Student">Expenditure Per Student</option>
+                        <option value="Completion Rate 150% time">Completion Rate 150% time</option>
+                        <option value="Retention Rate">Retention Rate</option>
+                        <option value="Median Debt on Graduation">Median Debt on Graduation</option>
+                        <option value="Median Earnings 8 years After Entry">Median Earnings 8 years After Entry</option>
+                    </select> 
+                </div> 
+            </div>
+            <div id="menus2" style="flex-direction:column;display:inline-block; position: absolute; height: 50px; right:0;width:50%;"> 
+                <div class="dropdown-container">
+                    <b>X Axis:</b>
+                    <select id="XAxis2Menu">
+                        <option value="Admission Rate">Admission Rate</option>
+                        <option value="ACT Median">ACT Median</option>
+                        <option value="SAT Average">SAT Average</option>
+                        <option value="Undergrad Population">Undergrad Population</option>
+                        <option value="% White">%White</option>
+                        <option value="% Black">% Black</option>
+                        <option value="% Hispanic">% Hispanic</option>
+                        <option value="% Asian">% Asian</option>
+                        <option value="% American Indian">% American Indian</option>
+                        <option value="% Pacific Islander">% Pacific Islander</option>
+                        <option value="Average Cost">Average Cost</option>
+                        <option value="Expenditure Per Student">Expenditure Per Student</option>
+                        <option value="Completion Rate 150% time">Completion Rate 150% time</option>
+                        <option value="Retention Rate">Retention Rate</option>
+                        <option value="Median Debt on Graduation">Median Debt on Graduation</option>
+                        <option value="Median Earnings 8 years After Entry">Median Earnings 8 years After Entry</option>
+                    </select>  
+                </div>   
+                <div class="dropdown-container">
+                    <b>Y Axis:</b>
+                    <select id="YAxis2Menu">
+                        <option value="Admission Rate">Admission Rate</option>
+                        <option value="ACT Median">ACT Median</option>
+                        <option value="SAT Average">SAT Average</option>
+                        <option value="Undergrad Population">Undergrad Population</option>
+                        <option value="% White">%White</option>
+                        <option value="% Black">% Black</option>
+                        <option value="% Hispanic">% Hispanic</option>
+                        <option value="% Asian">% Asian</option>
+                        <option value="% American Indian">% American Indian</option>
+                        <option value="% Pacific Islander">% Pacific Islander</option>
+                        <option value="Average Cost">Average Cost</option>
+                        <option value="Expenditure Per Student">Expenditure Per Student</option>
+                        <option value="Completion Rate 150% time">Completion Rate 150% time</option>
+                        <option value="Retention Rate">Retention Rate</option>
+                        <option value="Median Debt on Graduation">Median Debt on Graduation</option>
+                        <option value="Median Earnings 8 years After Entry">Median Earnings 8 years After Entry</option>
+                    </select> 
+                </div> 
+            </div>
+            <div class = "chart">
+                <svg id="chart1" height="500" width="50%"></svg>
+                <svg id="chart2" height="500" width="50%" x="50%"></svg>
+               
+                <div>
+                    <div>
+                        <button onclick="goBack()">Back to Regions</button>
+                        <br/>
+                </div>
+                <div >
+                    <span class = "dot.legend" style="background-color: red;
+                            border-radius: 8px;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            display: inline-block;
+                            margin-right: 5px;
+                            opacity: 1;">
+                    </span> Private
+                </div>
+                <div>
+                    <span class = "dot.legend" style="background-color: green;
+                            border-radius: 10px;
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            display: inline-block;
+                            margin-right: 5px;
+                            opacity: 1;">
+                        </span> Public
+                </div>
+                </div>
+            </div>
+            
+            
+        </div>
+
+
+    </body>
+    
+    
+    <script src="./main.js"></script>
+</html>
