@@ -1,3 +1,7 @@
-> This lab will have you put all this design and implementation skill together and create a vis from scratch. There are 4 different options for you to pick from. Each of them has their own visual style, user interactions, datasets, and implementation challenges. 
+This project is a interactive data visualization web application that enables users to explore and compare US colleges across multiple metrics. 
 
-See the Wiki for the options and descriptions for lab7 (tab above). 
+Click on the region bubbles to find specific colleges in that region.
+
+Use the drop-down to filter by different attributes
+
+Hover over the dots to find out more about the individual universities.
